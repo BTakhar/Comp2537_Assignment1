@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
-let usercollection;
+let userCollection;
 const mongoUrl = `mongodb+srv://${mongodb_user}:${mongodb_password}@${mongodb_host}/${mongodb_user_database}?retryWrites=true&w=majority`;
 const client = new MongoClient(mongoUrl);
 //user db
