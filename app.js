@@ -181,9 +181,9 @@ app.use((req, res) => {
 async function startServer() {
     try {
         await connectDB();
-        app.listen(PORT, () => {
-            console.log(`Server running on http://localhost:${PORT}`);
-        });
+        aapp.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running on port ${PORT}`);
+});
     } catch (err) {
         console.error('DB connection failed:', err);
         process.exit(1);
