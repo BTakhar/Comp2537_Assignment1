@@ -8,7 +8,6 @@ const Joi = require('joi');
 const { MongoClient } = require('mongodb');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 const saltRounds = 12;
 
 const mongodb_host = process.env.MONGODB_HOST;
@@ -180,12 +179,18 @@ app.use((req, res) => {
 
 async function startServer() {
     try {
+        console.log("Starting server...");
         await connectDB();
-        aapp.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on port ${PORT}`);
-});
+        console.log("Mongo connected");
+
+        const PORT = process.env.PORT || 3000;
+
+        app.listen(PORT, '0.0.0.0', () => {
+            console.log(`Listening on port ${PORT}`);
+        });
+
     } catch (err) {
-        console.error('DB connection failed:', err);
+        console.error("Startup failed:", err);
         process.exit(1);
     }
 }
