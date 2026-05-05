@@ -61,7 +61,7 @@ const isLoggedIn = (req) => req.session.authenticated && req.session.username;
 app.get('/', (req, res) => {
     if (!isLoggedIn(req)) {
         res.send(`
-        <body text-align:center;">
+        <body style="text-align:center;">
 
             <button onclick="window.location.href='/signup'">Sign Up</button><br><br>
             <button onclick="window.location.href='/login'">Login</button><br><br>
@@ -71,7 +71,7 @@ app.get('/', (req, res) => {
     } else {
         res.send(
             `
-        <body text-align:center;">
+        <body style="text-align:center;">
             Hello, ${req.session.username}! <br><br>
             <button onclick="window.location.href='/members'">Members Area</button><br><br>
             <button onclick="window.location.href='/logout'">Logout</button><br><br>
@@ -191,18 +191,18 @@ app.get('/members', (req, res) => {
     console.log('members session data:', req.session);
     console.log('isLoggedIn:', isLoggedIn(req));
     if (!isLoggedIn(req)) {
-        res.redirect('/');
+        return res.redirect('/');
     }
     const images = ['Transformers07.jpg','TF2SteelPoster.jpg','tf3logo.webp'];
     const randomImage = images[Math.floor(Math.random() * images.length)];
 
     const html = `
-        <body text-align:center;">
+        <body style="text-align:center;">
          Hello, ${req.session.username}! <br><br>
          <img src="/${randomImage}" alt="random image" width="300"><br><br>
          ${randomImage}
         <button onclick="window.location.href='/logout'">Logout</button><br><br>
-        <body text-align:center;">
+        <body style="text-align:center;">
            
         `
 
