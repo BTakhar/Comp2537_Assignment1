@@ -221,6 +221,6 @@ app.use((req, res) => {
     res.status(404);
     res.send("Page not found - 404");
 });
-app.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
