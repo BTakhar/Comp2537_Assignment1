@@ -232,7 +232,8 @@ async function startServer() {
         });
 
     } catch (err) {
-        console.error("Server failed to start:", err);
+        console.error("❌ DB connection failed:", err);
+        process.exit(1);
     }
 }
 
