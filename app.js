@@ -19,9 +19,11 @@ const mongodb_session_secret = process.env.MONGODB_SESSION_SECRET;
 const node_session_secret = process.env.NODE_SESSION_SECRET;
 const { MongoClient } = require('mongodb');
 
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
+let usercollection;
 const mongoUrl = `mongodb+srv://${mongodb_user}:${mongodb_password}@${mongodb_host}/${mongodb_user_database}?retryWrites=true&w=majority`;
 const client = new MongoClient(mongoUrl);
 //user db
