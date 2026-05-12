@@ -1,0 +1,57 @@
+<%- include('templates/header') %>
+
+<section class="py-5">
+  <div class="container">
+
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-5 gap-3">
+      <div>
+        <p class="text-uppercase fw-bold mb-1"
+           style="color:#e63946;font-family:'Syne',sans-serif;letter-spacing:2px;font-size:0.75rem;">
+          <i class="bi bi-shield-lock me-1"></i>Admin Panel
+        </p>
+        <h1 class="page-title h2 mb-1">User Management</h1>
+        <p class="text-muted mb-0">
+          <%= users.length %> registered user<%= users.length !== 1 ? 's' : '' %>
+        </p>
+      </div>
+      <a href="/" class="btn btn-outline-secondary">
+        <i class="bi bi-house me-2"></i>Home
+      </a>
+    </div>
+
+    <div class="card">
+      <div class="card-body p-0">
+        <div class="table-responsive">
+          <table class="table table-hover mb-0 align-middle">
+            <thead style="background-color:#f8f5f0;">
+              <tr>
+                <th class="px-4 py-3" style="font-family:'Syne',sans-serif;font-size:0.8rem;letter-spacing:0.5px;text-transform:uppercase;color:#6c757d;">
+                  User
+                </th>
+                <th class="px-4 py-3" style="font-family:'Syne',sans-serif;font-size:0.8rem;letter-spacing:0.5px;text-transform:uppercase;color:#6c757d;">
+                  Role
+                </th>
+                <th class="px-4 py-3" style="font-family:'Syne',sans-serif;font-size:0.8rem;letter-spacing:0.5px;text-transform:uppercase;color:#6c757d;">
+                  Actions
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (let i = 0; i < users.length; i++) { %>
+                <%- include('templates/user', { user: users[i] }) %>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-muted small mt-3">
+      <i class="bi bi-info-circle me-1"></i>
+      Changes are applied immediately and saved to the database.
+    </p>
+
+  </div>
+</section>
+
+<%- include('templates/footer') %>

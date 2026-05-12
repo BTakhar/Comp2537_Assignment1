@@ -1,0 +1,62 @@
+<%- include('templates/header') %>
+
+<section class="py-5">
+  <div class="container">
+
+    <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-5 gap-3">
+      <div>
+        <h1 class="page-title display-6 mb-1">
+          Hello, <span style="color:#e63946;"><%= user.username %>!</span>
+        </h1>
+        <p class="text-muted mb-0">Welcome to the members area.</p>
+      </div>
+      <a href="/logout" class="btn btn-outline-secondary">
+        <i class="bi bi-box-arrow-right me-2"></i>Sign Out
+      </a>
+    </div>
+
+    <!-- Responsive image grid – 3 cols on md+, 1 col on mobile -->
+    <h2 class="page-title h5 mb-4 text-uppercase" style="letter-spacing:2px;color:#e63946;font-size:0.8rem;">
+      <i class="bi bi-images me-2"></i>Gallery
+    </h2>
+
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <div class="card overflow-hidden h-100" style="border-radius:12px;">
+          <img src="/Transformers07.jpg" alt="logo1" class="img-fluid w-100"
+               style="object-fit:cover;height:280px;" />
+          <div class="card-body py-3">
+            <p class="card-text text-muted small mb-0">
+              <i class="bi bi-heart-fill me-1" style="color:#e63946;"></i>Movie 1
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card overflow-hidden h-100" style="border-radius:12px;">
+          <img src="/TF2SteelPoster.jpg" alt="logo2" class="img-fluid w-100"
+               style="object-fit:cover;height:280px;" />
+          <div class="card-body py-3">
+            <p class="card-text text-muted small mb-0">
+              <i class="bi bi-heart-fill me-1" style="color:#e63946;"></i>Movie 2
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="card overflow-hidden h-100" style="border-radius:12px;">
+          <img src="/tf3logo.webp" alt="logo3" class="img-fluid w-100"
+               style="object-fit:cover;height:280px;" />
+          <div class="card-body py-3">
+            <p class="card-text text-muted small mb-0">
+              <i class="bi bi-heart-fill me-1" style="color:#e63946;"></i>Movie 3
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<%- include('templates/footer') %>
